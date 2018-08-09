@@ -52,9 +52,9 @@ class ShoppingList extends Component {
 
         <ListGroup>
           <TransitionGroup className="shopping-list">
-            {items.map(({id, name}) => (
+            {items.map(({_id, name}) => (
                         // NOTE:  classNames  with an 's' here is needed!
-                        <CSSTransition key={id} timeout={500} classNames="fade">
+                        <CSSTransition key={_id} timeout={500} classNames="fade">
                           <ListGroupItem>
                             <Button
                               className="remove-btn"
@@ -66,7 +66,7 @@ class ShoppingList extends Component {
                               //   }));
                               // }}
                               // cleanup after Redux:
-                              onClick={this.onDeleteClick.bind(this, id)}
+                              onClick={this.onDeleteClick.bind(this, _id)}
                             >
                               &times;  {/*This is the "x" symbol */}
                             </Button>
